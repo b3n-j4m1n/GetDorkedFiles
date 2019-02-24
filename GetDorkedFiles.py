@@ -74,7 +74,7 @@ def get_dorked_files(site, file_types, timestamp, url_list):
             header = {"User-Agent": random.choice(user_agent)}
             # the Google dork
             request = (
-                "https://www.google.com.au/search?num=100&start="
+                "https://www.google.com.au/search?filter=0&num=100&start="
                 + str(start)
                 + "&q=site%3A"
                 + site
