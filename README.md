@@ -53,3 +53,6 @@ optional arguments:
 
 TODO
 - include Bing results
+- read a list of domains from a file
+- add an argument for Google TLD e.g. google.com.au, google.com.sg, etc.
+- add more "normal" searches inbetween dorks
