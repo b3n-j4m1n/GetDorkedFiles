@@ -114,12 +114,11 @@ def get_dorked_files(site, file_types, timestamp, url_list):
             # a nightmare...
             else:
                 for line in soup.findAll("a", href=True):
-                    for ext in file_types:
-                        url = re.search(r"(http|https)" + "(.*?)\." + ext, line['href'])
-                        if url is not None and not re.search(r"webcache.googleusercontent.com", str(line)) and not re.search(r"translate.google.com", str(line)):
-                            file.write(url.group(0) + "\n")
+                    url = re.search(r"(htt.*://.*)" + site + "(.*)", line['href'])
+                    if url is not None and not re.search(r"webcache.googleusercontent.com", str(line)) and not re.search(r"translate.google.com", str(line)):
+                        file.write(url.group(0) + "\n")
 
-                            logging.info(url.group(0))
+                        logging.info(url.group(0))
 
                 start = start + 100
 
